@@ -26,7 +26,7 @@ const StepsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-brand-light">
+    <section id="steps" className="py-20 bg-brand-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -37,19 +37,19 @@ const StepsSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Steps List */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             {steps.map((step, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-10 h-10 bg-brand rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">{step.number}</span>
+              <div key={index} className="flex items-start space-x-6">
+                <div className="flex-shrink-0 w-12 h-12 bg-brand rounded-full flex items-center justify-center text-lg font-bold text-white">
+                  {step.number}
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-semibold text-foreground">
+                <div className="space-y-3 pt-1">
+                  <h3 className="text-xl font-bold text-foreground">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -58,35 +58,36 @@ const StepsSection = () => {
           </div>
 
           {/* Dashboard Preview */}
-          <div className="bg-white rounded-xl shadow-xl p-4">
-            <div className="bg-gray-50 rounded-lg p-6 space-y-4">
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="font-semibold text-foreground">S3 Access Dashboard</h4>
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+          <div className="lg:ml-8">
+            <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
+              <div className="bg-white px-6 py-4 border-b border-gray-200">
+                <div className="flex items-center justify-between">
+                  <h4 className="font-semibold text-gray-900 text-lg">S3 Access Dashboard</h4>
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                  </div>
                 </div>
               </div>
               
-              {/* Mock Dashboard Content */}
-              <div className="space-y-3">
-                <div className="bg-white p-3 rounded border">
+              <div className="p-6 space-y-4 bg-gray-50">
+                <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">my-app-uploads</span>
-                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Secure</span>
+                    <span className="text-sm font-medium text-gray-900">my-app-uploads</span>
+                    <span className="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">Secure</span>
                   </div>
                 </div>
-                <div className="bg-white p-3 rounded border">
+                <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">user-data-bucket</span>
-                    <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Review</span>
+                    <span className="text-sm font-medium text-gray-900">user-data-bucket</span>
+                    <span className="text-xs bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full font-medium">Review</span>
                   </div>
                 </div>
-                <div className="bg-white p-3 rounded border">
+                <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium">backup-storage</span>
-                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Secure</span>
+                    <span className="text-sm font-medium text-gray-900">backup-storage</span>
+                    <span className="text-xs bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">Secure</span>
                   </div>
                 </div>
               </div>
