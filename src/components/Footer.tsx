@@ -109,18 +109,18 @@ const Footer = () => {
 
         {/* Newsletter Section */}
         <div className="border-t border-white/20 py-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-8">
             <div className="text-center lg:text-left">
               <h4 className="font-semibold text-white mb-2">Stay Updated</h4>
               <p className="text-gray-300 text-sm">Get the latest updates on S3 security best practices and new features.</p>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row gap-2 w-full lg:w-auto max-w-md">
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="px-4 py-2 rounded-lg bg-white text-brand placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
+                className="flex-1 px-4 py-2 rounded-lg bg-white text-brand placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white min-w-0"
               />
-              <Button variant="secondary" className="bg-white text-brand hover:bg-gray-100">
+              <Button variant="secondary" className="bg-white text-brand hover:bg-gray-100 whitespace-nowrap">
                 Subscribe
               </Button>
             </div>

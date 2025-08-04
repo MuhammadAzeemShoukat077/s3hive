@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Shield, Folder, Users, Zap } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -8,14 +8,22 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
+            <div className="mb-6">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-brand-light text-brand border border-brand/20">
+                <Shield className="w-4 h-4 mr-2" />
+                Secure S3 Access Management
+              </span>
+            </div>
+            
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                Simplify Your S3 
-                <span className="text-brand block">Access Control</span>
+                Simplify Your <span className="text-brand">S3</span><br />
+                Access Control
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg">
-                All-in-one AWS IAM Compliance Manager and Control unified policies, 
-                simplify data access, and Improve security, all in one dashboard.
+                Manage AWS S3 bucket permissions through an intuitive interface. 
+                Create roles, assign granular permissions, and control access 
+                without wrestling with IAM policies.
               </p>
             </div>
 
@@ -32,10 +40,29 @@ const HeroSection = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex items-center space-x-8 text-sm text-muted-foreground">
-              <span>✓ 30 days challenge</span>
-              <span>✓ All-in-one dashboard</span>
-              <span>✓ No Coding Required</span>
+            <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-1">
+                <Folder className="w-4 h-4 text-brand" />
+                <span>30 Days Challenge</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <Users className="w-4 h-4 text-brand" />
+                <span>All in One Dashboard</span>
+              </div>
+              <div className="flex items-center space-x-1">
+                <Zap className="w-4 h-4 text-brand" />
+                <span>No Coding Required</span>
+              </div>
+            </div>
+            
+            <div className="text-center mb-6">
+              <p className="text-sm text-muted-foreground mb-2">Trusted by DevOps teams at:</p>
+              <div className="flex justify-center space-x-6 text-sm text-muted-foreground">
+                <span>TechCorp</span>
+                <span>DataFlow</span>
+                <span>CloudOps</span>
+                <span>SecureStack</span>
+              </div>
             </div>
           </div>
 

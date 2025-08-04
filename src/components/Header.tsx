@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,15 +22,16 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-foreground hover:text-brand transition-colors">Products</a>
-            <a href="#steps" className="text-foreground hover:text-brand transition-colors">Use Case</a>
-            <a href="#pricing" className="text-foreground hover:text-brand transition-colors">Pricing</a>
-            <a href="#faq" className="text-foreground hover:text-brand transition-colors">Contact</a>
+            <a href="#features" className="nav-link">Features</a>
+            <a href="#steps" className="nav-link">How it Works</a>
+            <a href="#pricing" className="nav-link">Pricing</a>
+            <a href="#faq" className="nav-link">Contact</a>
           </nav>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <span className="text-sm text-foreground">Try It</span>
+            <span className="text-sm text-foreground">Sign In</span>
+            <ThemeToggle />
             <Button className="bg-brand hover:bg-brand-dark text-white">
               Start Free Trial
             </Button>
@@ -51,12 +53,13 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-border bg-background">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#features" className="block px-3 py-2 text-foreground hover:text-brand">Products</a>
-              <a href="#steps" className="block px-3 py-2 text-foreground hover:text-brand">Use Case</a>
+              <a href="#features" className="block px-3 py-2 text-foreground hover:text-brand">Features</a>
+              <a href="#steps" className="block px-3 py-2 text-foreground hover:text-brand">How it Works</a>
               <a href="#pricing" className="block px-3 py-2 text-foreground hover:text-brand">Pricing</a>
               <a href="#faq" className="block px-3 py-2 text-foreground hover:text-brand">Contact</a>
-              <div className="px-3 py-2">
-                <Button className="w-full bg-brand hover:bg-brand-dark text-white">
+              <div className="px-3 py-2 flex items-center justify-between">
+                <ThemeToggle />
+                <Button className="bg-brand hover:bg-brand-dark text-white">
                   Start Free Trial
                 </Button>
               </div>

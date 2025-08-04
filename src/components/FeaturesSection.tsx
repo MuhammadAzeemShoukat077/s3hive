@@ -1,37 +1,49 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Users, BarChart3, Zap, Lock, Globe } from "lucide-react";
+import roleAccessIcon from "@/assets/role-access-icon.png";
+import folderPermissionsIcon from "@/assets/folder-permissions-icon.png";
+import awsSecurityIcon from "@/assets/aws-security-icon.png";
+import s3BrowserIcon from "@/assets/s3-browser-icon.png";
+import auditComplianceIcon from "@/assets/audit-compliance-icon.png";
+import quickSetupIcon from "@/assets/quick-setup-icon.png";
 
 const FeaturesSection = () => {
   const features = [
     {
       icon: Shield,
-      title: "Centralized Access Control",
-      description: "Manage access through a unified AWS IAM Management across multiple S3 buckets with custom policies."
+      image: roleAccessIcon,
+      title: "Role-Based Access Control",
+      description: "Create custom roles and assign permissions with precision. No more complex IAM policy juggling."
     },
     {
       icon: Users,
-      title: "Real-time Notifications",
-      description: "Get instant alerts for any unauthorized access attempts or policy violations across your infrastructure."
+      image: folderPermissionsIcon,
+      title: "Granular Folder Permissions",
+      description: "Set read, write, and delete permissions at any folder or file level within your S3 buckets."
     },
     {
       icon: BarChart3,
-      title: "Audit & Compliance",
-      description: "Comprehensive audit trails and compliance reporting to meet industry standards and regulations."
+      image: awsSecurityIcon,
+      title: "Secure AWS Integration",
+      description: "Connect securely to your AWS account with minimal permissions. Your data stays in your control."
     },
     {
       icon: Zap,
-      title: "Quick Deployment",
-      description: "Deploy and configure your S3 access controls in minutes, not hours or days."
+      image: s3BrowserIcon,
+      title: "Intuitive S3 Browser",
+      description: "Navigate your S3 buckets like a file system. No more wrestling with the AWS console."
     },
     {
       icon: Lock,
-      title: "Advanced Security",
-      description: "Multi-factor authentication, encryption, and advanced security features to protect your data."
+      image: auditComplianceIcon,
+      title: "Audit & Compliance",
+      description: "Track all access changes with detailed logs. Meet compliance requirements effortlessly."
     },
     {
       icon: Globe,
-      title: "Global Scaling",
-      description: "Scale your access management across multiple regions and thousands of S3 buckets seamlessly."
+      image: quickSetupIcon,
+      title: "Quick Setup",
+      description: "Get started in minutes, not hours. Connect your AWS account and start managing access immediately."
     }
   ];
 
@@ -50,18 +62,21 @@ const FeaturesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
-            const IconComponent = feature.icon;
             return (
-              <Card key={index} className="border border-border hover:shadow-lg transition-shadow">
+              <Card key={index} className="feature-card border border-border group">
                 <CardContent className="p-6">
                   <div className="space-y-4">
-                    <div className="w-12 h-12 bg-brand-light rounded-lg flex items-center justify-center">
-                      <IconComponent className="h-6 w-6 text-brand" />
+                    <div className="w-20 h-20 rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-brand/10 to-brand/5">
+                      <img 
+                        src={feature.image} 
+                        alt={feature.title}
+                        className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300"
+                      />
                     </div>
-                    <h3 className="text-xl font-semibold text-foreground">
+                    <h3 className="text-xl font-semibold text-foreground group-hover:text-brand transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
